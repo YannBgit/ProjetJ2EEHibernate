@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping>
+
+ <class name = "amis.entity.Niveau" table = "niveau">
+ 	
+ 	<id name = "niveauId" column = "niveauId"> 
+ 		<generator class = "increment"/> 
+ 	</id> 
+ 	
+	<property name = "nom"/>
+	<property name = "annees"/>
+	
+	<union-subclass name = "amis.entity.Licence" table = "licence">
+	</union-subclass>
+	
+	<union-subclass name = "amis.entity.Master" table = "master">
+	</union-subclass>
+ 
+ </class>
+
+</hibernate-mapping>
